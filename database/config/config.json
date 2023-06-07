@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "dbbelimabelas",
+    "password": "databasebe15",
+    "database": "dbbaries",
+    "host": "db4free.net",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "dbbelimabelas",
+    "password": "databasebe15",
+    "database": "dbbaries",
+    "host": "db4free.net",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "dbbelimabelas",
+    "password": "databasebe15",
+    "database": "dbbaries",
+    "host": "db4free.net",
+    "dialect": "mysql"
+  }
+}
