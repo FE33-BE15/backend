@@ -1,18 +1,20 @@
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
-const vTokenHeader = (req, res, next) => {
-  try {
-    const token = req.headers["x-access-token"];
-    if (!token) return res.status(403).send("Access Denied!");
+// const vTokenHeader = (req, res, next) => {
+//   try {
+//     const token = req.headers["x-access-token"];
+//     if (!token) {
+//       return res.status(401).send("Access Denied!");
+//     }
 
-    const decoded = jwt.verify(token, process.env.JWTPRIVATEKEY);
-    req.user = decoded;
-    next();
-  } catch (error) {
-    res.status(404).send("Invalid Token!");
-  }
-};
+//     const decoded = jwt.verify(token, process.env.JWTPRIVATEKEY);
+//     req.user = decoded;
+//     next();
+//   } catch (error) {
+//     res.status(401).send("Invalid Token!");
+//   }
+// };
 
 const vTokenBearer = (req, res, next) => {
   const bearerHeader = req.headers["authorization"];
@@ -26,11 +28,11 @@ const vTokenBearer = (req, res, next) => {
       req.token = bearerToken;
       next();
     } catch (error) {
-      res.status(404).send("Invalid Token!");
+      res.status(401).send("Invalid Token!");
     }
   } else {
-    res.sendStatus(403);
+    res.sendStatus(401);
   }
 };
 
-module.exports = { vTokenHeader, vTokenBearer };
+module.exports = { vTokenBearer };
