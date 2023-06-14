@@ -1,11 +1,12 @@
 const bcrypt = require("bcrypt");
 const Models = require("../../database/models");
 const generateToken = require("../../utils/generateAuthToken");
+const { hitungKalori, countingCalories } = require("../../database/helpers/countCalories");
 const User = Models.users;
 
 const register = async (req, res) => {
   try {
-    const { name, email, password, age, weight, height, gender, activity, roleId } = req.body;
+    const { name, email, age, weight, height, activity, password, gender } = req.body;
 
     const existingUser = await User.findOne({
       where: {
@@ -19,16 +20,23 @@ const register = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
+    const calori = countingCalories({
+      gender,
+      weight,
+      height,
+      age,
+    });
+
     const newUser = await User.create({
       name,
       email,
-      password: hashedPassword,
       age,
       weight,
       height,
-      gender,
       activity,
-      roleId: 2,
+      password: hashedPassword,
+      gender,
+      calori,
     });
 
     const token = generateToken(newUser);

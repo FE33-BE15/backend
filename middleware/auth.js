@@ -1,21 +1,6 @@
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
-// const vTokenHeader = (req, res, next) => {
-//   try {
-//     const token = req.headers["x-access-token"];
-//     if (!token) {
-//       return res.status(401).send("Access Denied!");
-//     }
-
-//     const decoded = jwt.verify(token, process.env.JWTPRIVATEKEY);
-//     req.user = decoded;
-//     next();
-//   } catch (error) {
-//     res.status(401).send("Invalid Token!");
-//   }
-// };
-
 const vTokenBearer = (req, res, next) => {
   const bearerHeader = req.headers["authorization"];
 
