@@ -11,37 +11,40 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       email: {
         type: Sequelize.STRING,
-      },
-      password: {
-        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true,
       },
       age: {
         type: Sequelize.INTEGER,
+        allowNull: false,
       },
       weight: {
-        type: Sequelize.DECIMAL(5, 2),
+        type: Sequelize.FLOAT,
+        allowNull: false,
       },
       height: {
-        type: Sequelize.DECIMAL(5, 2),
-      },
-      gender: {
-        type: Sequelize.STRING,
+        type: Sequelize.FLOAT,
+        allowNull: false,
       },
       activity: {
         type: Sequelize.STRING,
-      },
-      roleId: {
-        type: Sequelize.INTEGER,
         allowNull: false,
-        references: {
-          model: "roles",
-          key: "id",
-        },
-        onUpdate: "CASCADE",
-        onDelete: "CASCADE",
+      },
+      password: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      gender: {
+        type: Sequelize.ENUM("Laki-Laki", "Perempuan", "Lainnya"),
+        allowNull: false,
+      },
+      calori: {
+        type: Sequelize.FLOAT,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,

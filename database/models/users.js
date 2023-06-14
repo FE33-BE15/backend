@@ -2,22 +2,23 @@
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class users extends Model {
-    static associate(models) {
-      // Relasi
-      users.belongsTo(models.roles, { foreignKey: "roleId" });
-    }
+    // static associate(models) {
+    // }
   }
   users.init(
     {
       name: DataTypes.STRING,
       email: DataTypes.STRING,
-      password: DataTypes.STRING,
       age: DataTypes.INTEGER,
-      weight: DataTypes.DECIMAL(5, 2),
-      height: DataTypes.DECIMAL(5, 2),
-      gender: DataTypes.STRING,
+      weight: DataTypes.FLOAT,
+      height: DataTypes.FLOAT,
       activity: DataTypes.STRING,
-      roleId: DataTypes.INTEGER,
+      password: DataTypes.STRING,
+      gender: {
+        type: DataTypes.ENUM("Laki-Laki", "Perempuan", "Lainnya"),
+        allowNull: false,
+      },
+      calori: DataTypes.FLOAT,
     },
     {
       sequelize,

@@ -9,17 +9,19 @@ module.exports = {
      * Example:
      */
     await queryInterface.bulkInsert(
-      "roles",
+      "users",
       [
         {
           id: 1,
-          name: "admin",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          id: 2,
-          name: "user",
+          name: "John Doe",
+          email: "jhondoe@gmail.com",
+          age: 35,
+          weight: 65,
+          height: 165,
+          activity: "Olahraga",
+          password: "123jhondoe45",
+          gender: "Laki-Laki",
+          calori: 500,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -33,7 +35,7 @@ module.exports = {
      * Add commands to revert seed here.
      *
      * Example:
-     *  */
-    await queryInterface.bulkDelete("roles", null, {});
+     */
+    await queryInterface.bulkDelete("users", null, {});
   },
 };
