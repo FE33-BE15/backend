@@ -7,6 +7,7 @@ const cors = require("cors");
 const db = require("./database/models");
 
 const routerIndex = require("./routes/index");
+const routerUsers = require("./routes/users");
 const app = express();
 
 app.use(cors());
@@ -34,5 +35,6 @@ app.use(
 );
 
 app.use("/", routerIndex);
+app.use("/users", routerUsers);
 
 module.exports = app;
