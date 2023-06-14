@@ -1,9 +1,10 @@
 {
   "development": {
-    "username": "xrx27zpnk30z64nyvdwi",
-    "password": "pscale_pw_OGmHr35ylu3pnAWQ8qZpx1Lx3d4ksekUc10pAH5qUU",
-    "database": "apps",
-    "host": "aws.connect.psdb.cloud",
+    "username": "root",
+    "password": "NHSq5231FrCEzwFydsyG",
+    "database": "railway",
+    "port": 6813,
+    "host": "containers-us-west-53.railway.app",
     "dialect": "mysql",
     "dialectOptions": {
       "ssl": {
@@ -13,10 +14,11 @@
     }
   },
   "test": {
-    "username": "xrx27zpnk30z64nyvdwi",
-    "password": "pscale_pw_OGmHr35ylu3pnAWQ8qZpx1Lx3d4ksekUc10pAH5qUU",
-    "database": "apps",
-    "host": "aws.connect.psdb.cloud",
+    "username": "root",
+    "password": "NHSq5231FrCEzwFydsyG",
+    "database": "railway",
+    "port": 6813,
+    "host": "containers-us-west-53.railway.app",
     "dialect": "mysql",
     "dialectOptions": {
       "ssl": {
@@ -26,10 +28,11 @@
     }
   },
   "production": {
-    "username": "xrx27zpnk30z64nyvdwi",
-    "password": "pscale_pw_OGmHr35ylu3pnAWQ8qZpx1Lx3d4ksekUc10pAH5qUU",
-    "database": "apps",
-    "host": "aws.connect.psdb.cloud",
+    "username": "root",
+    "password": "NHSq5231FrCEzwFydsyG",
+    "database": "railway",
+    "port": 6813,
+    "host": "containers-us-west-53.railway.app",
     "dialect": "mysql",
     "dialectOptions": {
       "ssl": {
