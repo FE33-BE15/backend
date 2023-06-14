@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const Models = require("../../database/models");
 const generateToken = require("../../utils/generateAuthToken");
+const jwtHelper = require("../../helper/jwtHelper");
 const { hitungKalori, countingCalories } = require("../../database/helpers/countCalories");
 const User = Models.users;
 
@@ -68,9 +69,17 @@ const login = async (req, res) => {
       return res.status(400).json({ message: "Invalid email or password!" });
     }
 
-    const token = generateToken(user);
+    const uniqueId = Date.now().toString();
 
-    return res.status(200).json({ user, token });
+    const token = jwtHelper.signIn({
+      id: user.id,
+      uniqueId,
+    });
+
+    return res.status(200).json({
+      message: "Berhasil Login!",
+      token,
+    });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: "Internal server error" });

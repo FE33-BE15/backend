@@ -1,23 +1,41 @@
 {
   "development": {
-    "username": "dbbelimabelas",
-    "password": "databasebe15",
-    "database": "dbbaries",
-    "host": "db4free.net",
-    "dialect": "mysql"
+    "username": "xrx27zpnk30z64nyvdwi",
+    "password": "pscale_pw_OGmHr35ylu3pnAWQ8qZpx1Lx3d4ksekUc10pAH5qUU",
+    "database": "apps",
+    "host": "aws.connect.psdb.cloud",
+    "dialect": "mysql",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   },
   "test": {
-    "username": "dbbelimabelas",
-    "password": "databasebe15",
-    "database": "dbbaries",
-    "host": "db4free.net",
-    "dialect": "mysql"
+    "username": "xrx27zpnk30z64nyvdwi",
+    "password": "pscale_pw_OGmHr35ylu3pnAWQ8qZpx1Lx3d4ksekUc10pAH5qUU",
+    "database": "apps",
+    "host": "aws.connect.psdb.cloud",
+    "dialect": "mysql",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   },
   "production": {
-    "username": "dbbelimabelas",
-    "password": "databasebe15",
-    "database": "dbbaries",
-    "host": "db4free.net",
-    "dialect": "mysql"
+    "username": "xrx27zpnk30z64nyvdwi",
+    "password": "pscale_pw_OGmHr35ylu3pnAWQ8qZpx1Lx3d4ksekUc10pAH5qUU",
+    "database": "apps",
+    "host": "aws.connect.psdb.cloud",
+    "dialect": "mysql",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   }
 }
